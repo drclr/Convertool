@@ -10,6 +10,7 @@ const app = Vue.createApp({
   },
   computed: {
     toConvert() {
+      window.scrollTo(0, 0);
 
       const TabsUnitConversion = [["lb", "g", "453.59237"], ["lb", "kg", "0.45359237"], ["kg", "lb", "2.20462262"], ["kg", "metric ton", "0.001"]];
 
@@ -43,10 +44,10 @@ const app = Vue.createApp({
       }
 
       for (const tab of TabsUnitConversion) {
-        if ((tab[0] === initialUnit) && (tab[1] === this.unitWanted)) {
+        if ((tab[0] === this.initialUnit) && (tab[1] === this.unitWanted)) {
           return this.numberToConvert * Number(tab[2])
         }
-        if ((tab[1] === initialUnit) && (tab[0] === this.unitWanted)) {
+        if ((tab[1] === this.initialUnit) && (tab[0] === this.unitWanted)) {
           return this.numberToConvert * (1 / Number(tab[2]))
         }
       }
