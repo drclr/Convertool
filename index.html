@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet">
+    <title>Convertool</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="headApp">
+        <h1>Convertool</h1>
+    
+      </header>
+      <div id="cardInputs">
+        <div id="inputNumber">
+  
+          <label for="inputnumberToConvert"> Enter a value to convert : </label>
+          <input type="number" id="inputnumberToConvert" v-model="numberToConvert" />
+        </div>
+        <div id="cardOutputDisplay">
+          <div id="cardOutputDisplay__value" v-if="numberToConvert && initialUnit && unitWanted">
+            {{ numberToConvert + ' ' + initialUnit + ' = ' + toConvert + ' '
+                +
+                unitWanted
+            }}
+          </div>
+        </div>
+  
+        <div class="units">
+          <div class="unitsCard">
+            <div class="unitsCard__title"> Select the initial mass unit :</div>
+  
+            <div class="unitsCard__Inputs">
+  
+              <input type="radio" id="GramIni" value="g" v-model="initialUnit" />
+              <label for="GramIni">Gram</label>
+  
+              <input type="radio" id="KiloGramIni" value="kg" v-model="initialUnit" />
+              <label for="KiloGramIni">KiloGram</label>
+  
+              <input type="radio" id="MetricTonIni" value="metric ton" v-model="initialUnit" />
+              <label for="MetricTonIni">Metric ton</label>
+  
+              <input type="radio" id="PoundIni" value="lb" v-model="initialUnit" />
+              <label for="PoundIni">Pound</label>
+            </div>
+          </div>
+          <div class="unitsCard">
+            <div class="unitsCard__title"> Select the final mass unit :</div>
+            <div class="unitsCard__Inputs">
+              <input type="radio" id="GramWanted" value="g" v-model="unitWanted" />
+              <label for="GramWanted">Gram</label>
+  
+              <input type="radio" id="KiloGramWanted" value="kg" v-model="unitWanted" />
+              <label for="KiloGramWanted">KiloGram</label>
+  
+              <input type="radio" id="MetricTonWanted" value="metric ton" v-model="unitWanted" />
+              <label for="MetricTonWanted">Metric ton</label>
+  
+              <input type="radio" id="PoundWanted" value="lb" v-model="unitWanted" />
+              <label for="PoundWanted">Pound</label>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+    </div>
+  
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./app.js">
+    </script>
+</body>
+</html>
