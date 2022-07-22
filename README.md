@@ -1,6 +1,6 @@
 # Covertool
 
-App to convert any number from, to:
+Responsive app to convert any number from, to:
 - gram
 - pound
 - kilogram
