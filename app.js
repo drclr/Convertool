@@ -23,7 +23,7 @@ const app = Vue.createApp({
       }
 
       if ((this.initialUnit === 'metric ton') && (this.unitWanted === 'lb')) {
-        return this.numberToConvert * (1 / Number(TabsUnitConversion[1][2]) * Number(TabsUnitConversion[3][2]))
+        return this.numberToConvert * (TabsUnitConversion[2][2]) * (1 / Number(TabsUnitConversion[3][2]))
 
       }
 
@@ -40,7 +40,7 @@ const app = Vue.createApp({
       }
 
       if ((this.initialUnit === 'metric ton') && (this.unitWanted === 'g')) {
-        return this.numberToConvert * (1 / Number(TabsUnitConversion[3][2]) * Number(TabsUnitConversion[3][2]))
+        return this.numberToConvert * (1 / (Number(TabsUnitConversion[3][2]) * Number(TabsUnitConversion[3][2])))
       }
 
       for (const tab of TabsUnitConversion) {
